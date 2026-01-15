@@ -1,0 +1,7 @@
+{
+  "name": "Apple Security Nigeria Limited - Corporate Website",
+  "description": "A professional, trust-focused corporate website for Apple Security Nigeria Limited, providing manned security, CCTV, and GPS tracking services across Nigeria since 2004.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
