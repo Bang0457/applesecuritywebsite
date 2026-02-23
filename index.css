@@ -1,0 +1,10 @@
+/* Global stylesheet referenced by index.html.
+   Keeping this file prevents missing-asset warnings during build. */
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+}
