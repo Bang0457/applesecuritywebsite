@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-8 text-left">
+          <div className="max-w-3xl space-y-8">
 
             <div className="inline-flex items-center bg-red-700/20 border border-red-700/50 px-4 py-1.5 rounded-full text-red-500 font-bold text-sm tracking-widest uppercase">
               Established 2004
