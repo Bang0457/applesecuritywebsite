@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/guards/officer-1.svg"
+            src="/images/guards/officer-3.svg"
             className="w-full h-full object-cover"
             alt="Apple Security Nigeria Guards"
           />
