@@ -13,22 +13,15 @@ const Home: React.FC = () => {
       <section className="relative h-[600px] flex items-center overflow-hidden">
 
         {/* Background Image */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{ width: '100%', left: '5px', top: '-117px' }}
-        >
+        <div className="absolute inset-0 z-0">
           <img
             src="/images/guards/officer-1.svg"
             className="w-full h-full object-cover"
-            style={{ width: '100%', height: '1763px' }}
             alt="Apple Security Nigeria Guards"
           />
 
           {/* Dark overlay for text readability */}
-          <div
-            className="absolute inset-x-0 bottom-0 bg-black/60"
-            style={{ top: 9, height: '100%', width: '100%', left: '-5px', opacity: 0.14 }}
-          ></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         {/* Hero Content */}
@@ -49,11 +42,10 @@ const Home: React.FC = () => {
               corporate and private clients.
             </p>
 
-            <div className="relative flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-4">
               <a
                 href={`tel:${COMPANY.phone}`}
-                className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition-all shadow-xl absolute"
-                style={{ left: 172, top: 508 }}
+                className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition-all shadow-xl"
               >
                 <PhoneCall className="w-5 h-5" />
                 <span>Call Now</span>
@@ -61,8 +53,7 @@ const Home: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded font-bold text-lg transition-all shadow-xl absolute"
-                style={{ left: 458, top: 504 }}
+                className="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded font-bold text-lg transition-all shadow-xl"
               >
                 Request a Quote
               </Link>

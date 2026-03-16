@@ -7,18 +7,20 @@
     <title>Apple Security Nigeria Limited | Professional Security Solutions</title>
     <link rel="icon" type="image/svg+xml" href="/images/logo/favicon-placeholder.svg?v=1">
     <script>
+        // Tailwind CDN reads configuration from `tailwind.config` at initialization.
+        // Avoid reassigning `tailwind` so the CDN script can safely attach to it.
         window.tailwind = window.tailwind || {};
         window.tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: "#E30613",
-                        brandBlue: "#0033A0",
-                        brandYellow: "#FFD700",
-                        brandWhite: "#FFFFFF"
-                    }
-                }
+          theme: {
+            extend: {
+              colors: {
+                brandRed: "#E30613",
+                brandBlue: "#0033A0",
+                brandYellow: "#FFD700",
+                brandWhite: "#FFFFFF"
+              }
             }
+          }
         };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
