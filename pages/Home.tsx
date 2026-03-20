@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[100svh] lg:h-[600px] flex items-center overflow-hidden">
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -27,27 +27,27 @@ const Home: React.FC = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-0">
+          <div className="max-w-2xl sm:max-w-3xl space-y-6 sm:space-y-8">
 
             <div className="inline-flex items-center bg-red-700/20 border border-red-700/50 px-4 py-1.5 rounded-full text-red-500 font-bold text-sm tracking-widest uppercase">
               Established 2004
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight text-center align-middle tracking-[1px]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-snug sm:leading-tight text-center tracking-[1px]">
               Apple <span className="text-red-600">Security</span>. Absolute Protection.
             </h1>
 
-            <p className="text-3xl font-medium text-slate-200 leading-relaxed max-w-2xl text-center">
+            <p className="text-base sm:text-lg md:text-xl font-medium text-slate-200 leading-relaxed max-w-xl sm:max-w-2xl text-center">
               Professional asset and life protection since 2004. We deliver authoritative,
               reliable, and technology‑driven security solutions for Nigeria's most demanding
               corporate and private clients.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4 pt-4 w-full">
               <a
                 href={`tel:${COMPANY.phone}`}
-                className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition-all shadow-xl"
+                className="bg-red-700 hover:bg-red-800 text-white px-6 sm:px-8 py-4 rounded font-bold text-lg flex items-center justify-center space-x-2 transition-all shadow-xl w-full sm:w-auto"
               >
                 <PhoneCall className="w-5 h-5" />
                 <span>Call Now</span>
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded font-bold text-lg transition-all shadow-xl"
+                className="bg-white hover:bg-slate-100 text-slate-900 px-6 sm:px-8 py-4 rounded font-bold text-lg transition-all shadow-xl w-full sm:w-auto text-center"
               >
                 Request a Quote
               </Link>
