@@ -81,31 +81,30 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
         />
         <div
           className="relative px-6 py-16 sm:px-10 sm:py-20 lg:px-14"
-          style={{ width: "1219px", height: "1210px", opacity: 1 }}
         >
           <motion.div
-            className="w-full max-w-[1148px]"
+            className="mx-auto flex w-full max-w-5xl flex-col items-center text-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.45 }}
           >
             <motion.p
-              className="absolute left-[561px] top-[427px] inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-white/90"
+              className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-white/90"
               variants={itemVariants}
             >
               WHO WE ARE
             </motion.p>
 
             <motion.h2
-              className="absolute left-[93px] top-[458px] mt-6 h-[116px] w-[1089px] text-center text-3xl font-black tracking-tight sm:text-4xl md:text-5xl"
+              className="mt-6 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl"
               variants={itemVariants}
             >
               {title}
             </motion.h2>
 
             <motion.p
-              className="absolute left-[206px] top-[584px] mt-6 h-[95px] w-[907px] max-w-[907px] text-center text-base leading-[30px] tracking-[1.5px] text-white/85 sm:text-lg"
+              className="mt-6 max-w-3xl text-base leading-8 tracking-[0.05em] text-white/85 sm:text-lg"
               style={{ fontFamily: '"SF Compact Display", sans-serif' }}
               variants={itemVariants}
             >
@@ -113,7 +112,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
             </motion.p>
 
             <motion.div
-              className="absolute left-[474px] top-[699px] mt-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-center"
+              className="mt-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-center"
               variants={itemVariants}
             >
               <Button asChild size="lg">

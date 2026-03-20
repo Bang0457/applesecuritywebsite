@@ -19,9 +19,10 @@ export interface ServiceScrollStripProps {
 
 function repeatToMin(items: ServiceImageItem[], minCount: number): ServiceImageItem[] {
   if (items.length === 0) return []
+  if (items.length >= minCount) return items
   const out: ServiceImageItem[] = []
   while (out.length < minCount) out.push(...items)
-  return out.slice(0, Math.max(minCount, items.length))
+  return out.slice(0, minCount)
 }
 
 export function ServiceScrollStrip({

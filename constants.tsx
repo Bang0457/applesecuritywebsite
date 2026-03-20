@@ -106,6 +106,7 @@ export const getIcon = (name: string) => {
 };
 
 export const SERVICE_IMAGES = {
+  "Manned Security / Guards": "/images/services/officer-1.svg",
   "School Security": "/images/services/officer-1.svg",
   "Shopping Centre Security": "/images/services/shopping-officer.jpeg",
   "Executive Protection": "/images/services/officers-3.svg",
@@ -113,9 +114,11 @@ export const SERVICE_IMAGES = {
   "GPS Tracking": "/images/services/gps-tracker-2.jpg",
   "Alarm Systems": "/images/services/alarm-system.jpg",
   "Perimeter Fencing": "/images/services/fence.webp",
+  "All Property Security": "/images/services/officers-3.svg",
 } as const;
 
 export const SERVICE_IMAGE_STRIP_ITEMS: ServiceImageItem[] = [
+  { id: "manned-security", title: "Manned Security / Guards", image: SERVICE_IMAGES["Manned Security / Guards"], alt: "Manned Security / Guards" },
   { id: "school-security", title: "School Security", image: SERVICE_IMAGES["School Security"], alt: "School Security" },
   { id: "shopping-security", title: "Shopping Centre Security", image: SERVICE_IMAGES["Shopping Centre Security"], alt: "Shopping Centre Security" },
   { id: "executive-protection", title: "Executive Protection", image: SERVICE_IMAGES["Executive Protection"], alt: "Executive Protection" },
@@ -123,4 +126,5 @@ export const SERVICE_IMAGE_STRIP_ITEMS: ServiceImageItem[] = [
   { id: "gps-tracking", title: "GPS Tracking", image: SERVICE_IMAGES["GPS Tracking"], alt: "GPS Tracking" },
   { id: "alarm-systems", title: "Alarm Systems", image: SERVICE_IMAGES["Alarm Systems"], alt: "Alarm Systems" },
   { id: "perimeter-fencing", title: "Perimeter Fencing", image: SERVICE_IMAGES["Perimeter Fencing"], alt: "Perimeter Fencing" },
+  { id: "property-security", title: "All Property Security", image: SERVICE_IMAGES["All Property Security"], alt: "All Property Security" },
 ];
