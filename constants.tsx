@@ -2,6 +2,7 @@
 import React from 'react';
 import { Shield, School, ShoppingBag, UserCheck, Video, Bell, Navigation, Fence, Home } from 'lucide-react';
 import { Service } from './types';
+import type { ServiceImageItem } from './components/ui/service-scroll-strip';
 
 export const COMPANY = {
   name: "Apple Security Nigeria Limited",
@@ -47,14 +48,14 @@ export const SERVICES: Service[] = [
   },
   {
     id: "executive-protection",
-    title: "Employee / Executive Protection",
+    title: "Executive Protection",
     description: "Personalized security services for high-profile individuals and corporate executives.",
     useCase: "Essential for VIP travel, high-stakes business meetings, and personal safety.",
     icon: "UserCheck"
   },
   {
     id: "cctv-surveillance",
-    title: "CCTV & Live Camera Surveillance",
+    title: "CCTV Surveillance",
     description: "Advanced 24/7 monitoring systems with remote access and high-definition clarity.",
     useCase: "Perfect for warehouses, retail stores, and monitoring of private properties.",
     icon: "Video"
@@ -68,7 +69,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "gps-tracking",
-    title: "GPS Tracking Solutions",
+    title: "GPS Tracking",
     description: "Real-time vehicle and fleet monitoring with engine cut-off capabilities.",
     useCase: "Best for fleet managers, transport companies, and private vehicle owners.",
     icon: "Navigation"
@@ -103,3 +104,23 @@ export const getIcon = (name: string) => {
     default: return <Shield className="w-8 h-8" />;
   }
 };
+
+export const SERVICE_IMAGES = {
+  "School Security": "/images/services/officer-1.svg",
+  "Shopping Centre Security": "/images/services/shopping-officer.jpeg",
+  "Executive Protection": "/images/services/officers-3.svg",
+  "CCTV Surveillance": "/images/services/cctv.png.jpeg",
+  "GPS Tracking": "/images/services/gps-tracker-2.jpg",
+  "Alarm Systems": "/images/services/alarm-system.jpg",
+  "Perimeter Fencing": "/images/services/fence.webp",
+} as const;
+
+export const SERVICE_IMAGE_STRIP_ITEMS: ServiceImageItem[] = [
+  { id: "school-security", title: "School Security", image: SERVICE_IMAGES["School Security"], alt: "School Security" },
+  { id: "shopping-security", title: "Shopping Centre Security", image: SERVICE_IMAGES["Shopping Centre Security"], alt: "Shopping Centre Security" },
+  { id: "executive-protection", title: "Executive Protection", image: SERVICE_IMAGES["Executive Protection"], alt: "Executive Protection" },
+  { id: "cctv-surveillance", title: "CCTV Surveillance", image: SERVICE_IMAGES["CCTV Surveillance"], alt: "CCTV Surveillance" },
+  { id: "gps-tracking", title: "GPS Tracking", image: SERVICE_IMAGES["GPS Tracking"], alt: "GPS Tracking" },
+  { id: "alarm-systems", title: "Alarm Systems", image: SERVICE_IMAGES["Alarm Systems"], alt: "Alarm Systems" },
+  { id: "perimeter-fencing", title: "Perimeter Fencing", image: SERVICE_IMAGES["Perimeter Fencing"], alt: "Perimeter Fencing" },
+];

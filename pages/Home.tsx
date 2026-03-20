@@ -2,7 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Clock, Users, ChevronRight, PhoneCall, MessageSquare } from 'lucide-react';
-import { COMPANY, SERVICES, getIcon } from '../constants';
+import { COMPANY, SERVICES, SERVICE_IMAGE_STRIP_ITEMS, getIcon } from '../constants';
+import { ServiceScrollStrip } from '../components/ui/service-scroll-strip';
+import { HeroSection } from '../components/ui/hero-section-4';
 
 const Home: React.FC = () => {
   const featuredServices = Array.isArray(SERVICES) ? SERVICES.slice(0, 4) : [];
@@ -102,22 +104,15 @@ const Home: React.FC = () => {
       {/* Quick Intro */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h4 className="text-red-700 font-bold uppercase tracking-widest mb-4">Who We Are</h4>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 leading-tight">
-              Your Trusted Partner in Nigerian Asset Protection
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Apple Security Nigeria Limited has been a stalwart in the security industry since 2004. Under the leadership of CEO Lion Steven Adetomiwa, we have built a reputation for reliability, authority, and professionalism.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              With operations centered in Ibadan and Lagos, we serve a diverse range of clients from corporate organizations and schools to private estates and vehicle owners.
-            </p>
-            <Link to="/about" className="inline-flex items-center text-red-700 font-bold text-lg hover:underline space-x-2">
-              <span>Learn more about our history</span>
-              <ChevronRight className="w-5 h-5" />
-            </Link>
-          </div>
+          <HeroSection
+            title="Your Trusted Partner in Nigerian Asset Protection"
+            subtitle="Apple Security Nigeria Limited has been a stalwart in the security industry since 2004. Under the leadership of CEO Lion Steven Adetomiwa, we have built a reputation for reliability, authority, and professionalism. With operations centered in Ibadan and Lagos, we serve corporate organizations, schools, private estates, and vehicle owners."
+            primaryButtonText="Learn More"
+            primaryButtonHref="/about"
+            secondaryButtonText="Contact Us"
+            secondaryButtonHref="/contact"
+            imageUrl="/images/leadership/CEO.svg"
+          />
         </div>
       </section>
 
@@ -127,6 +122,14 @@ const Home: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Security Services</h2>
             <p className="text-slate-600">We offer comprehensive protection solutions tailored to the unique security challenges of the Nigerian environment.</p>
+          </div>
+
+          <div className="mb-12">
+            <ServiceScrollStrip
+              items={SERVICE_IMAGE_STRIP_ITEMS}
+              title="Service Highlights"
+              velocity={[2.5, -2.5]}
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
