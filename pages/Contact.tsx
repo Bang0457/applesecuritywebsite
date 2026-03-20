@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Facebook, Send, MessageSquare } from 'lucide-react';
 import { COMPANY } from '../constants';
+import { PaystackPaymentButton } from '../components/ui/paystack-payment-button';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -114,6 +115,22 @@ const Contact: React.FC = () => {
             <div className="bg-slate-50 p-8 md:p-12 rounded-2xl shadow-inner border border-slate-200">
               <h2 className="text-3xl font-bold mb-4 uppercase tracking-tight">Request a Quote</h2>
               <p className="text-slate-500 mb-10">Fill out the form below and one of our security experts will contact you within 24 hours.</p>
+
+              <div className="mb-8">
+                <h3 className="text-xl font-extrabold text-slate-900 mb-2">Pay a Deposit (Optional)</h3>
+                <p className="text-slate-600 text-sm mb-4">
+                  If you want to reserve your booking early, pay the deposit using Paystack.
+                </p>
+                <PaystackPaymentButton
+                  paymentType="DEPOSIT"
+                  collectCustomerDetails={false}
+                  customer={{
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                  }}
+                />
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

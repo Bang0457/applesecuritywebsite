@@ -2,6 +2,7 @@
 import React from 'react';
 import { COMPANY } from '../constants';
 import { Navigation, ShieldCheck, Smartphone, Zap, Map, Power, MessageSquare } from 'lucide-react';
+import { PaystackPaymentButton } from '../components/ui/paystack-payment-button';
 
 const Products: React.FC = () => {
   return (
@@ -71,6 +72,17 @@ const Products: React.FC = () => {
                 <MessageSquare className="w-6 h-6" />
                 <span>ORDER ON WHATSAPP</span>
               </a>
+
+              <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <PaystackPaymentButton
+                  paymentType="GPS_TRACKER_PURCHASE"
+                  className="bg-white rounded-xl p-6 shadow-lg text-left"
+                />
+                <PaystackPaymentButton
+                  paymentType="ALARM_SYSTEM_PURCHASE"
+                  className="bg-white rounded-xl p-6 shadow-lg text-left"
+                />
+              </div>
             </div>
             
             <div className="relative">

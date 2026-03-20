@@ -3,6 +3,7 @@ import React from 'react';
 import { COMPANY, SERVICES, SERVICE_IMAGES, SERVICE_IMAGE_STRIP_ITEMS, getIcon } from '../constants';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { ServiceScrollStrip } from '../components/ui/service-scroll-strip';
+import { PaystackPaymentButton } from '../components/ui/paystack-payment-button';
 
 const Services: React.FC = () => {
   return (
@@ -93,6 +94,20 @@ const Services: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Can't Find a Specific Security Service?</h2>
           <p className="text-slate-400 text-lg mb-10">We provide custom security protocols designed for unique high-risk environments and high-profile assets. Contact us for a specialized consultation.</p>
+
+          <div className="text-left mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PaystackPaymentButton
+                paymentType="FULL_SECURITY_BOOKING"
+                className="bg-white rounded-xl p-6 shadow-lg text-left"
+              />
+              <PaystackPaymentButton
+                paymentType="CONSULTATION_FEE"
+                className="bg-white rounded-xl p-6 shadow-lg text-left"
+              />
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href={`tel:${COMPANY.phone}`} className="bg-red-700 hover:bg-red-800 px-10 py-4 rounded font-bold transition-all uppercase tracking-widest text-sm">
               Speak with an Expert

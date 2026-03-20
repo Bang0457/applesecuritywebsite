@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Products from './pages/Products';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import PaymentSuccess from './pages/PaymentSuccess';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/payment/success" element={<PaymentSuccess />} />
           </Routes>
         </main>
         <Footer />
