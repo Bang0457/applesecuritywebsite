@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <div className="bg-slate-900 py-20">
+      <div className="bg-[rgba(73,123,238,1)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 uppercase tracking-wider">About Us</h1>
           <div className="w-24 h-1.5 bg-red-700 mx-auto"></div>
@@ -83,7 +83,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission Vision */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-20 bg-[rgba(73,123,238,1)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-slate-800 p-12 rounded-xl text-center border-t-4 border-red-700 transition-transform hover:-translate-y-2">
