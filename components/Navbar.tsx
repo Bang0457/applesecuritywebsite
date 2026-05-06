@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-slate-900 text-white sticky top-0 z-50 shadow-xl border-b border-slate-800">
+    <nav className="premium-light-blue-bg text-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -43,8 +43,8 @@ const Navbar: React.FC = () => {
                 to={link.path}
                 className={`${
                   isActive(link.path)
-                    ? 'text-red-500 font-bold border-b-2 border-red-500'
-                    : 'text-slate-300 hover:text-white hover:border-b-2 hover:border-slate-500'
+                    ? 'text-red-600 font-bold border-b-2 border-red-600'
+                    : 'text-slate-700 hover:text-slate-900 hover:border-b-2 hover:border-slate-400'
                 } px-1 py-1 text-sm font-medium transition-all duration-200`}
               >
                 {link.name}
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none"
+              className="text-slate-700 hover:text-slate-900 focus:outline-none"
             >
               {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-slate-800 border-t border-slate-700">
+        <div className="md:hidden bg-white/35 backdrop-blur-md border-t border-slate-200/80">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
@@ -81,8 +81,8 @@ const Navbar: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={`${
                   isActive(link.path)
-                    ? 'bg-slate-900 text-red-500 font-bold'
-                    : 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                    ? 'bg-white/70 text-red-600 font-bold'
+                    : 'text-slate-700 hover:bg-white/80 hover:text-slate-900'
                 } block px-3 py-3 rounded-md text-base font-medium`}
               >
                 {link.name}

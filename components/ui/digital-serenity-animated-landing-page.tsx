@@ -23,21 +23,26 @@ const DigitalSerenity: React.FC<DigitalSerenityProps> = ({
     opacity: 0,
   });
   const [ripples, setRipples] = useState<Ripple[]>([]);
-  const [scrolled, setScrolled] = useState(false);
   const floatingElementsRef = useRef<HTMLElement[]>([]);
+  const hasPlayedScrollAnimationsRef = useRef(false);
 
   useEffect(() => {
+    const timeoutIds: ReturnType<typeof setTimeout>[] = [];
     const animateWords = () => {
       const wordElements = document.querySelectorAll(".word-animate");
       wordElements.forEach((word) => {
         const delay = parseInt(word.getAttribute("data-delay") || "0", 10) || 0;
-        setTimeout(() => {
-          word.style.animation = "word-appear 0.8s ease-out forwards";
-        }, delay);
+        timeoutIds.push(
+          setTimeout(() => {
+            word.style.animation = "word-appear 0.8s ease-out forwards";
+          }, delay),
+        );
       });
     };
-    const timeoutId = setTimeout(animateWords, 500);
-    return () => clearTimeout(timeoutId);
+    timeoutIds.push(setTimeout(animateWords, 500));
+    return () => {
+      timeoutIds.forEach(clearTimeout);
+    };
   }, []);
 
   useEffect(() => {
@@ -60,16 +65,21 @@ const DigitalSerenity: React.FC<DigitalSerenityProps> = ({
   }, []);
 
   useEffect(() => {
+    const rippleTimeoutIds = new Set<ReturnType<typeof setTimeout>>();
     const handleClick = (e: MouseEvent) => {
       const newRipple: Ripple = { id: Date.now(), x: e.clientX, y: e.clientY };
       setRipples((prev) => [...prev, newRipple]);
-      setTimeout(
-        () => setRipples((prev) => prev.filter((r) => r.id !== newRipple.id)),
-        1000,
-      );
+      const tid = setTimeout(() => {
+        rippleTimeoutIds.delete(tid);
+        setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
+      }, 1000);
+      rippleTimeoutIds.add(tid);
     };
     document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+      rippleTimeoutIds.forEach(clearTimeout);
+    };
   }, []);
 
   useEffect(() => {
@@ -99,20 +109,25 @@ const DigitalSerenity: React.FC<DigitalSerenityProps> = ({
       ".floating-element-animate",
     );
     floatingElementsRef.current = Array.from(elements);
+    const animationTimeoutIds: ReturnType<typeof setTimeout>[] = [];
     const handleScroll = () => {
-      if (!scrolled) {
-        setScrolled(true);
-        floatingElementsRef.current.forEach((el, index) => {
+      if (hasPlayedScrollAnimationsRef.current) return;
+      hasPlayedScrollAnimationsRef.current = true;
+      floatingElementsRef.current.forEach((el, index) => {
+        animationTimeoutIds.push(
           setTimeout(() => {
             el.style.animationPlayState = "running";
             el.style.opacity = "";
-          }, (parseFloat(el.style.animationDelay || "0") || 0) * 1000 + index * 100);
-        });
-      }
+          }, (parseFloat(el.style.animationDelay || "0") || 0) * 1000 + index * 100),
+        );
+      });
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      animationTimeoutIds.forEach(clearTimeout);
+    };
+  }, []);
 
   const pageStyles = `
     .digital-serenity-mouse-gradient {

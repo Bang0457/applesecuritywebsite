@@ -22,8 +22,8 @@ const Home: React.FC = () => {
             alt="Apple Security Nigeria Guards"
           />
 
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* Light-blue premium overlay for text readability */}
+          <div className="absolute inset-0 premium-light-blue-overlay"></div>
         </div>
 
         {/* Hero Content */}
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               Apple <span className="text-red-600">Security</span>. Absolute Protection.
             </h1>
 
-            <p className="text-[30px] font-semibold text-slate-200 leading-[39px] tracking-[2px] align-middle w-[712px] max-w-full mx-auto text-center [font-family:'Roboto',-apple-system,BlinkMacSystemFont,sans-serif]">
+            <p className="mx-auto max-w-full text-center font-semibold text-slate-200 [font-family:'Roboto',-apple-system,BlinkMacSystemFont,sans-serif] text-base leading-relaxed sm:text-lg md:text-xl">
               Professional asset and life protection since 2004. We deliver authoritative,
               reliable, and technology‑driven security solutions for Nigeria's most demanding
               corporate and private clients.
@@ -76,7 +76,9 @@ const Home: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">20+ Years</h3>
-                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1" style={{ color: 'var(--tw-ring-offset-color)' }}>Operational Excellence</p>
+                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1">
+                  Operational Excellence
+                </p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">

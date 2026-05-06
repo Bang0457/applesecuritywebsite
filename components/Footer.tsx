@@ -6,7 +6,7 @@ import { COMPANY } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t-4 border-red-700">
+    <footer className="premium-light-blue-bg text-slate-700 pt-16 pb-8 border-t-4 border-red-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 mb-16">
           
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/profile.php?id=61586776164556" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 p-2.5 rounded-full hover:bg-red-700 hover:text-white transition-all duration-300"
+                className="bg-white/65 p-2.5 rounded-full hover:bg-red-700 hover:text-white transition-all duration-300 border border-slate-200/70"
                 aria-label="Follow us on Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h3 className="text-white font-bold text-base mb-6 uppercase tracking-wider">Navigation</h3>
+            <h3 className="text-slate-900 font-bold text-base mb-6 uppercase tracking-wider">Navigation</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/" className="hover:text-red-500 transition-colors py-1 inline-block">Home</Link></li>
               <li><Link to="/about" className="hover:text-red-500 transition-colors py-1 inline-block">About Us</Link></li>
@@ -52,38 +52,38 @@ const Footer: React.FC = () => {
 
           {/* Contact Details */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h3 className="text-white font-bold text-base mb-6 uppercase tracking-wider">Get In Touch</h3>
+            <h3 className="text-slate-900 font-bold text-base mb-6 uppercase tracking-wider">Get In Touch</h3>
             <ul className="space-y-4 text-sm w-full">
               <li className="flex flex-col items-center sm:items-start sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                 <Phone className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <span className="hover:text-white transition-colors cursor-default">{COMPANY.phone}</span>
+                <span className="hover:text-slate-900 transition-colors cursor-default">{COMPANY.phone}</span>
               </li>
               <li className="flex flex-col items-center sm:items-start sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                 <Mail className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <span className="break-all hover:text-white transition-colors cursor-default">{COMPANY.email}</span>
+                <span className="break-all hover:text-slate-900 transition-colors cursor-default">{COMPANY.email}</span>
               </li>
               <li className="flex flex-col items-center sm:items-start sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                 <Facebook className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <span className="hover:text-white transition-colors cursor-default">{COMPANY.facebook}</span>
+                <span className="hover:text-slate-900 transition-colors cursor-default">{COMPANY.facebook}</span>
               </li>
             </ul>
           </div>
 
           {/* Office Locations */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h3 className="text-white font-bold text-base mb-6 uppercase tracking-wider">Regional Offices</h3>
+            <h3 className="text-slate-900 font-bold text-base mb-6 uppercase tracking-wider">Regional Offices</h3>
             <div className="space-y-6 text-sm w-full">
               <div className="group">
                 <p className="font-bold text-red-500 mb-2 transition-colors group-hover:text-red-400 uppercase text-xs tracking-widest">{COMPANY.locations.head.title}</p>
                 <p className="flex flex-col items-center sm:items-start sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                  <MapPin className="w-4 h-4 text-slate-500 flex-shrink-0 sm:mt-0.5" />
+                  <MapPin className="w-4 h-4 text-slate-600 flex-shrink-0 sm:mt-0.5" />
                   <span className="leading-relaxed">{COMPANY.locations.head.address}</span>
                 </p>
               </div>
               <div className="group">
                 <p className="font-bold text-red-500 mb-2 transition-colors group-hover:text-red-400 uppercase text-xs tracking-widest">{COMPANY.locations.lagos.title}</p>
                 <p className="flex flex-col items-center sm:items-start sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                  <MapPin className="w-4 h-4 text-slate-500 flex-shrink-0 sm:mt-0.5" />
+                  <MapPin className="w-4 h-4 text-slate-600 flex-shrink-0 sm:mt-0.5" />
                   <span className="leading-relaxed">{COMPANY.locations.lagos.address}</span>
                 </p>
               </div>
@@ -91,13 +91,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center">
-          <p className="text-xs text-slate-500 uppercase tracking-widest">
+        <div className="border-t border-slate-300/80 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center">
+          <p className="text-xs text-slate-600 uppercase tracking-widest">
             © {new Date().getFullYear()} {COMPANY.name}. All Rights Reserved.
           </p>
-          <div className="text-[10px] text-slate-600 flex space-x-4 uppercase tracking-tighter">
-            <a href="#" className="hover:text-slate-400">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-400">Terms of Service</a>
+          <div className="text-[10px] text-slate-500 flex space-x-4 uppercase tracking-tighter">
+            <a href="#" className="hover:text-slate-700">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-700">Terms of Service</a>
           </div>
         </div>
       </div>

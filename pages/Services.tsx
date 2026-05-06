@@ -9,8 +9,8 @@ const Services: React.FC = () => {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <div className="bg-slate-900 py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <div className="premium-light-blue-bg py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08]">
           <img
             src="https://picsum.photos/id/160/1200/400"
             className="w-full h-full object-cover"
@@ -19,8 +19,8 @@ const Services: React.FC = () => {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 uppercase tracking-wider">Our Security Solutions</h1>
-          <p className="text-slate-50 max-w-2xl mx-auto text-lg">Comprehensive, professional, and reliable protection services for every need.</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 uppercase tracking-wider">Our Security Solutions</h1>
+          <p className="text-slate-700 max-w-2xl mx-auto text-lg">Comprehensive, professional, and reliable protection services for every need.</p>
           <div className="w-24 h-1.5 bg-red-700 mx-auto mt-6"></div>
         </div>
       </div>
