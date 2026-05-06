@@ -79,9 +79,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
           className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-slate-950/40"
           aria-hidden="true"
         />
-        <div
-          className="relative px-6 py-16 sm:px-10 sm:py-20 lg:px-14"
-        >
+        <div className="relative px-6 py-16 text-[#dae2ec] sm:px-10 sm:py-20 lg:px-14">
           <motion.div
             className="mx-auto flex w-full max-w-5xl flex-col items-center text-center"
             variants={containerVariants}

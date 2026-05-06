@@ -51,7 +51,11 @@ export const PaystackPaymentButton: React.FC<PaystackPaymentButtonProps> = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const canPay = email.trim().length > 3;
+  const effectiveName = collectCustomerDetails ? name.trim() : customer?.name?.trim() ?? "";
+  const effectiveEmail = collectCustomerDetails ? email.trim() : customer?.email?.trim() ?? "";
+  const effectivePhone = collectCustomerDetails ? phone.trim() : customer?.phone?.trim() ?? "";
+
+  const canPay = effectiveEmail.length > 3;
 
   const handlePay = async () => {
     setError(null);
@@ -68,9 +72,9 @@ export const PaystackPaymentButton: React.FC<PaystackPaymentButtonProps> = ({
         body: JSON.stringify({
           paymentType,
           customer: {
-            name: collectCustomerDetails ? name.trim() : customer?.name?.trim() ?? "",
-            email: email.trim(),
-            phone: collectCustomerDetails ? phone.trim() : customer?.phone?.trim() ?? "",
+            name: effectiveName,
+            email: effectiveEmail,
+            phone: effectivePhone,
           },
         }),
       });

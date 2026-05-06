@@ -23,14 +23,14 @@ const Home: React.FC = () => {
           />
 
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-0">
           <div className="max-w-2xl sm:max-w-3xl space-y-6 sm:space-y-8">
 
-            <div className="inline-flex items-center bg-red-700/20 border border-red-700/50 px-4 py-1.5 rounded-full text-red-500 font-bold text-sm tracking-widest uppercase">
+            <div className="inline-flex items-center bg-transparent border border-red-700/50 px-4 py-1.5 rounded-full text-red-800 font-bold text-sm tracking-widest uppercase">
               Established 2004
             </div>
 
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               Apple <span className="text-red-600">Security</span>. Absolute Protection.
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl font-medium text-slate-200 leading-relaxed max-w-xl sm:max-w-2xl text-center">
+            <p className="text-[30px] font-semibold text-slate-200 leading-[39px] tracking-[2px] align-middle w-[712px] max-w-full mx-auto text-center [font-family:'Roboto',-apple-system,BlinkMacSystemFont,sans-serif]">
               Professional asset and life protection since 2004. We deliver authoritative,
               reliable, and technology‑driven security solutions for Nigeria's most demanding
               corporate and private clients.
@@ -71,30 +71,30 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-red-700/20 p-4 rounded-lg">
+              <div className="bg-red-700/50 p-4 rounded-lg">
                 <Clock className="w-8 h-8 text-red-600" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">20+ Years</h3>
-                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1">Operational Excellence</p>
+                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1" style={{ color: 'var(--tw-ring-offset-color)' }}>Operational Excellence</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-red-700/20 p-4 rounded-lg">
+              <div className="bg-red-700/50 p-4 rounded-lg">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Maximum Safety</h3>
-                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1">Asset & Life Protection</p>
+                <p className="text-[rgba(246,249,253,1)] uppercase tracking-widest text-xs font-bold mt-1">Asset & Life Protection</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-red-700/20 p-4 rounded-lg">
+              <div className="bg-red-700/50 p-4 rounded-lg">
                 <Users className="w-8 h-8 text-red-600" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Professional Guards</h3>
-                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1">Highly Trained Force</p>
+                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1" style={{ color: 'rgba(244, 240, 240, 1)' }}>Highly Trained Force</p>
               </div>
             </div>
           </div>

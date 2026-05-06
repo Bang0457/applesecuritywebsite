@@ -11,7 +11,7 @@ function inMemorySet(): Set<string> {
   return g.__PAYSTACK_INMEMORY_PROCESSED__;
 }
 
-function isKvConfigured() {
+export function isKvConfigured() {
   // @vercel/kv uses Upstash Redis env vars in most setups.
   return Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
 }

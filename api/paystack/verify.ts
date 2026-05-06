@@ -1,5 +1,10 @@
-import { getPaystackPaymentTypeConfig, isPaystackPaymentType, toKobo, type PaystackPaymentType } from "../../lib/payments/paystack-config";
-import { isReferenceProcessed } from "../../lib/payments/paystack-process-store";
+import {
+  getPaystackPaymentTypeConfig,
+  isPaystackPaymentType,
+  toKobo,
+  type PaystackPaymentType,
+} from "../../lib/payments/paystack-config";
+import { isKvConfigured, isReferenceProcessed } from "../../lib/payments/paystack-process-store";
 
 function safeString(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
@@ -68,8 +73,11 @@ export default async function handler(req: Request): Promise<Response> {
     );
   }
 
-  // Webhook is treated as the final source of truth.
-  const webhookConfirmed = statusIsSuccess && (await isReferenceProcessed(reference));
+  // When KV isn't configured (serverless local/in-memory fallback),
+  // `isReferenceProcessed()` can't reliably be shared across invocations.
+  // In that case, fall back to Paystack's transaction status.
+  const webhookConfirmed =
+    statusIsSuccess && (isKvConfigured() ? await isReferenceProcessed(reference) : true);
 
   return new Response(
     JSON.stringify({
