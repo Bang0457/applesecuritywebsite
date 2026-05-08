@@ -4,26 +4,16 @@ import { COMPANY, SERVICES, SERVICE_IMAGES, SERVICE_IMAGE_STRIP_ITEMS, getIcon }
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { ServiceScrollStrip } from '../components/ui/service-scroll-strip';
 import { PaystackPaymentButton } from '../components/ui/paystack-payment-button';
+import { PageHeroBanner } from '../components/ui/page-hero-banner';
 
 const Services: React.FC = () => {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <div className="premium-light-blue-bg py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.08]">
-          <img
-            src="https://picsum.photos/id/160/1200/400"
-            className="w-full h-full object-cover"
-            alt="Security Pattern"
-            style={{ color: 'rgba(73, 123, 238, 1)' }}
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 uppercase tracking-wider">Our Security Solutions</h1>
-          <p className="text-slate-700 max-w-2xl mx-auto text-lg">Comprehensive, professional, and reliable protection services for every need.</p>
-          <div className="w-24 h-1.5 bg-red-700 mx-auto mt-6"></div>
-        </div>
-      </div>
+      <PageHeroBanner
+        title="Our Security Solutions"
+        description="Comprehensive, professional, and reliable protection services for every need."
+      />
 
       {/* Service Image Strip */}
       <section className="bg-white py-12">

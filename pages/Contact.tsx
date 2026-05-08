@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Facebook, Send, MessageSquare } from 'lucide-react';
 import { COMPANY } from '../constants';
 import { PaystackPaymentButton } from '../components/ui/paystack-payment-button';
+import { PageHeroBanner } from '../components/ui/page-hero-banner';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -31,13 +32,10 @@ const Contact: React.FC = () => {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <div className="bg-[rgba(73,123,238,1)] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 uppercase tracking-wider">Contact Us</h1>
-          <p className="text-slate-50 max-w-2xl mx-auto text-lg">Reach out to Apple Security Nigeria Limited today. We are ready to serve you.</p>
-          <div className="w-24 h-1.5 bg-red-700 mx-auto mt-6"></div>
-        </div>
-      </div>
+      <PageHeroBanner
+        title="Contact Us"
+        description="Reach out to Apple Security Nigeria Limited today. We are ready to serve you."
+      />
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
