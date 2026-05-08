@@ -76,7 +76,7 @@ const Home: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">20+ Years</h3>
-                <p className="text-slate-400 uppercase tracking-widest text-xs font-bold mt-1">
+                <p className="text-[var(--tw-ring-offset-color)] uppercase tracking-widest text-xs font-bold mt-1">
                   Operational Excellence
                 </p>
               </div>
